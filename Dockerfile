@@ -27,7 +27,7 @@ COPY --from=BASE                                /usr/lib/libXau.so.6.0.0    /usr
 
 USER www-data
 
-ADD --chown=data:www-data https://github.com/lsky-org/lsky-pro/releases/download/${LSKY_VERSION}/lsky-pro-${LSKY_VERSION}.zip /var/www/html
+ADD --chown=www-data:www-data https://github.com/lsky-org/lsky-pro/releases/download/${LSKY_VERSION}/lsky-pro-${LSKY_VERSION}.zip /var/www/html
 
 RUN unzip lsky-pro-${LSKY_VERSION}.zip && rm lsky-pro-${LSKY_VERSION}.zip
 
