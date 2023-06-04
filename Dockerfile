@@ -10,8 +10,8 @@ FROM php:8.1.19-fpm-alpine3.16
 
 # Copy extension
 COPY BASE:/usr/local/lib/php/extensions/no-debug-non-zts-20210902/* /usr/local/lib/php/extensions/no-debug-non-zts-20210902/
-# Copy .ini
-# COPY ini/* /usr/local/etc/php/
+# Copy *.ini
+COPY /usr/local/etc/php/conf.d/* /usr/local/etc/php/conf.d
 
 RUN cp .env.example .env
 RUN php artisan key:generate
