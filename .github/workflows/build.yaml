@@ -4,5 +4,9 @@ jobs:
   build-docker-image:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: docker build -t yelfive/lsky-pro .
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Build docker image
+        run: docker build -t yelfive/lsky-pro .
+      - name: List docker image
+        run: docker image ls
