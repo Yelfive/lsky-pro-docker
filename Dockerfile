@@ -17,6 +17,10 @@ COPY --from=BASE /usr/local/etc/php/conf.d/* /usr/local/etc/php/conf.d/
 
 ADD https://github.com/lsky-org/lsky-pro/releases/download/${LSKY_VERSION}/lsky-pro-${LSKY_VERSION}.zip /var/www/html
 
+RUN unzip lsky-pro-${LSKY_VERSION}.zip && rm lsky-pro-${LSKY_VERSION}.zip
+
+WORKDIR /var/www/html
+
 RUN cp .env.example .env
 RUN php artisan key:generate
 
