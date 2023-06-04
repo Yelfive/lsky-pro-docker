@@ -1,0 +1,7 @@
+name: build-docker-image
+on: [push]
+jobs:
+  build-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - run: docker compose build -t yelfive/lsky-pro
