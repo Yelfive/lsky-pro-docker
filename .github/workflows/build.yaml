@@ -25,7 +25,7 @@ jobs:
         
       - name: Prepare
         run: |
-          sed -i 's/LSKY_VERSION_CHANGE_ME/$LSKY_VERSION/g' Dockerfile
+          sed -i "s/LSKY_VERSION_CHANGE_ME/$LSKY_VERSION/g" Dockerfile
           cat Dockerfile
 
       - name: Build docker image
