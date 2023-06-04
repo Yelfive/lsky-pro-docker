@@ -23,7 +23,7 @@ COPY --from=BASE                                /usr/lib/libXau.so.6.0.0    /usr
     /usr/lib/libX11.so.6                        /usr/lib/libbz2.so.1        /usr/lib/libgomp.so.1             /usr/lib/libxcb.so.1 \
     /usr/lib/libX11.so.6.4.0                    /usr/lib/libbz2.so.1.0.8    /usr/lib/libgomp.so.1.0.0         /usr/lib/libxcb.so.1.1.0 \
     /usr/lib/libXau.so.6                        /usr/lib/libexpat.so.1      /usr/lib/liblcms2.so.2 \
-    /usr/lib
+    /usr/lib/
 
 USER www-data
 
