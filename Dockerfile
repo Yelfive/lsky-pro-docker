@@ -24,4 +24,4 @@ WORKDIR /var/www/html
 RUN cp .env.example .env
 RUN php artisan key:generate
 
-CMD [php-fpm]
+CMD ["php-fpm"]
