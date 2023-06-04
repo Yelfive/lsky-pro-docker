@@ -8,7 +8,7 @@ RUN docker-php-ext-install bcmath pdo_mysql
 
 FROM php:8.1.19-fpm-alpine3.16
 
-ENV LSKY_VERSION=2.1
+ENV LSKY_VERSION=LSKY_VERSION_CHANGE_ME
 
 # Copy extension
 COPY --from=BASE /usr/local/lib/php/extensions/no-debug-non-zts-20210902/* /usr/local/lib/php/extensions/no-debug-non-zts-20210902/
