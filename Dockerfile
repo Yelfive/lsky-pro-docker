@@ -15,7 +15,7 @@ COPY --from=BASE /usr/local/lib/php/extensions/no-debug-non-zts-20210902/* /usr/
 # Copy *.ini
 COPY --from=BASE /usr/local/etc/php/conf.d/* /usr/local/etc/php/conf.d/
 
-ADD https://github.com/lsky-org/lsky-pro/releases/download/${LSKY_VERSION}/lsky-pro-{LSKY_VERSION}.zip /var/www/html
+ADD https://github.com/lsky-org/lsky-pro/releases/download/${LSKY_VERSION}/lsky-pro-${LSKY_VERSION}.zip /var/www/html
 
 RUN cp .env.example .env
 RUN php artisan key:generate
