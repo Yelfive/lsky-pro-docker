@@ -33,6 +33,8 @@ RUN unzip lsky-pro-${LSKY_VERSION}.zip && rm lsky-pro-${LSKY_VERSION}.zip
 
 WORKDIR /var/www/html
 
+VOLUME /var/www/html
+
 RUN cp .env.example .env
 RUN php artisan key:generate
 
