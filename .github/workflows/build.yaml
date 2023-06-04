@@ -4,17 +4,17 @@ on:
   workflow_dispatch:
     inputs:
       image_tag:
-        description: 'Docker image tag, e.g. 2.1'
+        description: 'Docker image tag (e.g. 2.1)'
         required: true
         type: string
       lsky_version:
-        description: 'Version of lsky-pro'
-        required: true
+        description: 'Version of lsky-pro (default to be same as docker image tag)'
+        required: false
         type: string
 
 env:
   IMAGE: ${{ vars.IMAGE }}:${{ inputs.image_tag }}
-  LSKY_VERSION: ${{ inputs.image_tag }}
+  LSKY_VERSION: ${{ inputs.image_tag || inputs.image_tag }}
 
 jobs:
   build-docker-image:
