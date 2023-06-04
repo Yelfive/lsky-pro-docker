@@ -1,6 +1,6 @@
 FROM php:8.1.19-fpm-alpine3.16 as BASE
 
-RUN apk add php8-pecl-imagick autoconf g++ make
+RUN apk add php8-pecl-imagick autoconf g++ make imagemagick imagemagick-dev
 RUN pecl install imagick
 
 RUN docker-php-exc-install bcmath pdo_mysql
