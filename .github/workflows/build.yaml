@@ -44,5 +44,5 @@ jobs:
 
       - name: Push to DockerHub
         run: |
-          docker push ${IMAG}
+          docker push ${IMAGE}
           docker push ${{ vars.IMAGE }}:latest
