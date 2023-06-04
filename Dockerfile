@@ -9,9 +9,9 @@ RUN docker-php-ext-install bcmath pdo_mysql
 FROM php:8.1.19-fpm-alpine3.16
 
 # Copy extension
-COPY --from BASE /usr/local/lib/php/extensions/no-debug-non-zts-20210902/* /usr/local/lib/php/extensions/no-debug-non-zts-20210902/
+COPY --from=BASE /usr/local/lib/php/extensions/no-debug-non-zts-20210902/* /usr/local/lib/php/extensions/no-debug-non-zts-20210902/
 # Copy *.ini
-COPY --from BASE /usr/local/etc/php/conf.d/* /usr/local/etc/php/conf.d
+COPY --from=BASE /usr/local/etc/php/conf.d/* /usr/local/etc/php/conf.d
 
 RUN cp .env.example .env
 RUN php artisan key:generate
